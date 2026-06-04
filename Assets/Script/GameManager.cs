@@ -30,6 +30,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ActivarDerrota()
+    {
+        if (!juegoTerminado)
+        {
+            TerminarJuego("Derrota - Atrapado");
+        }
+    }
+
     // EL DISPARADOR
     void TerminarJuego(string resultadoFinal)
     {
