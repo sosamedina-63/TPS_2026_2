@@ -24,13 +24,13 @@ public class InteractableObject : MonoBehaviour
     void Start()
     {
         objRenderer = GetComponent<Renderer>();
-       
+
         if (colorRojo != null && tipo == TipoObjeto.Panel)
         {
             objRenderer.material = colorRojo;
         }
 
-        // Conexión con tu placa
+        // Conexión con la placa
         arduinoSource = FindObjectOfType<ArduinoSerial>();
     }
 
@@ -73,7 +73,7 @@ public class InteractableObject : MonoBehaviour
         if (tipo == TipoObjeto.Panel)
         {
             if (colorVerde != null) objRenderer.material = colorVerde;
-           
+
             if (VRGameManager.Instance != null)
                 VRGameManager.Instance.RegistrarPanelActivado();
         }
@@ -87,19 +87,17 @@ public class InteractableObject : MonoBehaviour
     private void CompletarInteraccion()
     {
         if (yaActivado) return;
-       
+
         // Limpieza de variables
         gazedAt = false;
         temporizador = 0f;
         if (radialImage != null) radialImage.fillAmount = 0f;
-       
+
         // Ejecuta la orden
         Activate();
     }
 
-    // ---------------------------------------------------------
-    // EVENTOS NATIVOS CARDBOARD
-    // ---------------------------------------------------------
+
 
     public void OnPointerEnter()
     {
@@ -196,9 +194,6 @@ public class InteractableObject : MonoBehaviour
         Activate();
     }
 
-    // ---------------------------------------------------------
-    // SISTEMA DE EVENTOS DE CARDBOARD Y TEMPORIZADOR
-    // ---------------------------------------------------------
 
     public void OnPointerEnter()
     {

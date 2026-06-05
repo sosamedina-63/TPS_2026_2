@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Networking; // Librería para peticiones web asíncronas
+using UnityEngine.Networking;
 using System.Collections;
 
 // Estructura de datos compleja (JSON) para nuestra base de datos
@@ -41,7 +41,7 @@ public class FirebaseDataSender : MonoBehaviour
 
     private IEnumerator UploadToFirebase(string jsonData)
     {
-        // Usamos el nodo "partidas" y añadimos .json al final (requisito de la API REST de Firebase)
+        // Usamos el nodo partidas y añadimos .json al final (requisito de la API REST de Firebase)
         string url = databaseURL + "partidas.json";
 
         // Usamos POST para que Firebase genere una clave única automática para cada registro

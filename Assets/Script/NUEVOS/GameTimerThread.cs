@@ -1,12 +1,12 @@
 using UnityEngine;
-using System.Threading; // Librería obligatoria para concurrencia
+using System.Threading; 
 
 public class GameTimerThread : MonoBehaviour
 {
     [Header("Datos del Temporizador")]
     public int timeElapsedInSeconds = 0; // Este dato lo mandaremos a Firebase después
 
-    // Variables para manipular el hilo secundario (Idénticas a tu script FlightThread)
+    // Variables para manipular el hilo secundario
     private Thread timerThread; 
     private bool isTimerRunning = false; 
     private bool stopTimerThread = false; 
@@ -34,9 +34,7 @@ public class GameTimerThread : MonoBehaviour
         }
     }
 
-    // ---------------------------------------------------------
-    // ESTE MÉTODO SE EJECUTA FUERA DEL HILO PRINCIPAL DE UNITY
-    // ---------------------------------------------------------
+
     private void CountTime()
     {
         // Mientras no se active la bandera de paro (ganar o perder)
@@ -59,8 +57,8 @@ public class GameTimerThread : MonoBehaviour
         Debug.Log("Hilo secundario detenido. Tiempo final: " + timeElapsedInSeconds + " segundos.");
     }
 
-    // Seguridad en la ejecución: Si cambiamos de escena o cerramos el juego, 
-    // DEBEMOS matar el hilo secundario para evitar fugas de memoria (Memory Leaks).
+    // Si cambiamos de escena o cerramos el juego, 
+    
     void OnDestroy()
     {
         if (isTimerRunning)

@@ -10,11 +10,11 @@ public class VRMovementController : MonoBehaviour
     public float speed = 4.0f;            // Velocidad de desplazamiento del jugador
 
     private CharacterController controller;
-    private float gravity = 9.81f;        // Gravedad simple para mantener al jugador en el suelo
+    private float gravity = 9.81f;        // Gravedad para mantener al jugador en el suelo
 
     void Start()
     {
-        // Obtenemos de forma automática el componente CharacterController acoplado
+       
         controller = GetComponent<CharacterController>();
 
         if (arduinoSource == null)

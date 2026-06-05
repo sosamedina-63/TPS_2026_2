@@ -5,9 +5,9 @@ using System.Collections;
 public class GazeAndJoystickInteraction : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform vrCamera;             // La cámara del visor VR
-    public ArduinoSerial arduinoSource;    // El script que lee el joystick
-    public Image radialImage;              // La imagen de la interfaz que se va llenando (Retícula)
+    public Transform vrCamera;  // La cámara del visor VR
+    public ArduinoSerial arduinoSource;  // El script que lee el joystick
+    public Image radialImage;    // La imagen de la interfaz que se va llenando (Retícula)
 
     [Header("Configuración")]
     public float interactionDistance = 10f; // Distancia máxima para interactuar
@@ -20,7 +20,7 @@ public class GazeAndJoystickInteraction : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        // Trazamos un rayo (Raycast) desde el centro de la cámara hacia adelante
+        // Trazamos un rayo desde el centro de la cámara hacia adelante
         if (Physics.Raycast(vrCamera.position, vrCamera.forward, out hit, interactionDistance))
         {
             // Verificamos si el objeto golpeado tiene la etiqueta "Interactable"

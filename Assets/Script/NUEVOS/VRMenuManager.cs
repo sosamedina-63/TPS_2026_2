@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Librería obligatoria para cambiar de escenas
+using UnityEngine.SceneManagement;
 
 public class VRMenuManager : MonoBehaviour
 {
@@ -8,11 +8,11 @@ public class VRMenuManager : MonoBehaviour
     public GameObject panelInstrucciones;
 
     [Header("Configuración de Nivel")]
-    public string nombreEscenaJuego = "PROYECTO"; // IMPORTANTE: Pon aquí el nombre exacto de tu escena de la fábrica
+    public string nombreEscenaJuego = "PROYECTO"; 
 
     void Start()
     {
-        // Estado inicial por defecto: Mostrar menú, ocultar instrucciones
+       
         MostrarMenuPrincipal();
     }
 
@@ -30,7 +30,7 @@ public class VRMenuManager : MonoBehaviour
 
     public void IniciarJuego()
     {
-        // Carga la escena de la actividad principal
+       
         SceneManager.LoadScene(nombreEscenaJuego);
     }
 }

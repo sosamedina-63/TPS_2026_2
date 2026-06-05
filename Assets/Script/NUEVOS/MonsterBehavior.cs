@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.AI; // Librería necesaria para la inteligencia artificial
-using UnityEngine.SceneManagement; // Librería para reiniciar la escena al perder
+using UnityEngine.AI;
+using UnityEngine.SceneManagement; 
 
 public class MonsterBehavior : MonoBehaviour
 {
@@ -46,7 +46,7 @@ public class MonsterBehavior : MonoBehaviour
         }
     }
 
-    // Este método será llamado por el VRGameManager cuando actives el PRIMER panel
+    // Este método será llamado por el VRGameManager cuando se active el primer panel
     public void ActivateMonster()
     {
         isMonsterActive = true;

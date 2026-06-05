@@ -59,14 +59,14 @@ public class VRGameManager : MonoBehaviour
         }
     }
 
-    // Método que llamará la llave cuando la mires/presiones
+    // Método que llamará la llave cuando la mires o presiones
     public void RecogerLlave()
     {
         tieneLlave = true;
         if (llave != null) llave.SetActive(false); // Desaparece porque ya la "agarraste"
         Debug.Log("¡Tienes la llave! Corre a la puerta de salida.");
     }
-    // Método que llamará la llave cuando la mires/presiones
+    // Método que llamará la llave cuando la mires o presiones
     /*public void RecogerLlave()
     {
         tieneLlave = true;
@@ -80,7 +80,7 @@ public class VRGameManager : MonoBehaviour
     private IEnumerator ApagarLlaveSeguro()
     {
         // Obligamos al procesador a esperar el final del frame (milisegundos)
-        // Esto permite que el temporizador de la llave termine su ciclo de vida en paz
+        // Esto permite que el temporizador de la llave termine su ciclo de vida 
         yield return new WaitForEndOfFrame();
        
         if (llave != null)

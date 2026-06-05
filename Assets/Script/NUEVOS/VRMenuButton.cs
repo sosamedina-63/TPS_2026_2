@@ -11,7 +11,7 @@ public class VRMenuButton : MonoBehaviour
     public float fillTime = 3f;
 
     [Header("Conexión al Gestor (NUEVO)")]
-    public VRMenuManager menuManager; // Ahora es PÚBLICO para conexión directa
+    public VRMenuManager menuManager; 
 
     private bool gazedAt = false;
     private float temporizador = 0f;
