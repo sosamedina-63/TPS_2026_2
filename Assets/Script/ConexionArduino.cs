@@ -6,7 +6,7 @@ using System.IO.Ports; // Fundamental para leer el puerto COM
 public class ConexionArduino : MonoBehaviour
 {
     // Cambia "COM3" por el puerto que estés usando en Arduino IDE
-    SerialPort puerto = new SerialPort("COM3", 9600);
+    SerialPort puerto = new SerialPort("COM4", 9600);
 
     // Variables públicas para que ControlJugador las pueda usar para moverse o agarrar cosas
     public float ejeX = 0f;
